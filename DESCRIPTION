@@ -1,0 +1,18 @@
+Package: nycdcm
+Title: New York City Digital City Map Elements
+Version: 0.0.0.9000
+Authors@R:
+    person("Kieran", "Healy", , "kjhealy@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "https://orcid.org/0000-0001-9114-981X"))
+Description: The NYC Digitial City Map's main DCM layer and Major Streets and Arteries layer.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 3.5)
+Suggests:
+    sf (>= 1.0.0),
+    tibble (>= 3.0.0)
+LazyData: true
+LazyDataCompression: xz
