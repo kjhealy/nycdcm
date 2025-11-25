@@ -39,7 +39,7 @@ library(nycdcm)
 
 # What's included
 
-## NYC Digital City Map Street Centerlines
+## NYC Digital City Map Street Layer
 
 The main DCM layer containing street data for all of New York City.
 
@@ -91,7 +91,7 @@ ggplot(nyc_dcm_alteration_sf) +
   labs(fill = "Borough")
 ```
 
-## NYC Digital City Map Street Name Changes Areas
+##g NYC Digital City Map Street Name Changes: Areas
 
 Area-based street name changes including plaza names and public place names.
 
@@ -106,7 +106,7 @@ ggplot(nyc_dcm_snc_area_sf) +
   labs(fill = "Feature Type")
 ```
 
-## NYC Digital City Map Street Name Changes Lines
+## NYC Digital City Map Street Name Changes: Lines
 
 Linear street name changes including street renamings and honorary street names.
 
@@ -121,7 +121,7 @@ ggplot(nyc_dcm_snc_line_sf) +
   labs(color = "Local Law Type")
 ```
 
-## NYC Digital City Map Street Name Changes Points
+## NYC Digital City Map Street Name Changes: Points
 
 Point-based street name changes including intersection names and corner names.
 
