@@ -15,4 +15,4 @@ reference:
   - title: "New York Digital City Map Layers"
     contents:
       - nyc_dcm_sf
-      - nyc_dcmarterial_sf
+      - nyc_dcm_arterial_sf

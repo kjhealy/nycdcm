@@ -33,14 +33,14 @@
 #' library(ggplot2)
 #'
 #' # Plot arterial streets by borough
-#' ggplot(nyc_dcmarterial_sf) +
+#' ggplot(nyc_dcm_arterial_sf) +
 #'   geom_sf(aes(color = borough)) +
 #'   theme_minimal() +
 #'   labs(title = "NYC Arterials and Major Streets")
 #'
 #' # Count routes by type
-#' nyc_dcmarterial_sf |>
+#' nyc_dcm_arterial_sf |>
 #'   st_drop_geometry() |>
 #'   count(route_type, route_sub)
 #' }
-"nyc_dcmarterial_sf"
+"nyc_dcm_arterial_sf"
