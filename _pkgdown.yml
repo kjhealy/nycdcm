@@ -16,3 +16,7 @@ reference:
     contents:
       - nyc_dcm_sf
       - nyc_dcm_arterial_sf
+      - nyc_dcm_alteration_sf
+      - nyc_dcm_snc_area_sf
+      - nyc_dcm_snc_line_sf
+      - nyc_dcm_snc_point_sf

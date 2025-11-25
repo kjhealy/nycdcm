@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# nycdcm
+# nycdcm <img src="man/figures/nyc-dcm.png" align="right" width="360">
 
 <!-- badges: start -->
 <!-- badges: end -->
