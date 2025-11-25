@@ -39,7 +39,7 @@ library(nycdcm)
 
 # What's included
 
-## NYC Digital City Map Main Layer
+## NYC Digital City Map Street Centerlines
 
 The main DCM layer containing street data for all of New York City.
 
@@ -47,9 +47,9 @@ The main DCM layer containing street data for all of New York City.
 nyc_dcm_sf
 ```
 
-```{r nyc-dcm-map, fig.width=12, fig.height=12}
+```{r nyc-dcm-map, fig.width = 10, fig.height = 8}
 ggplot(nyc_dcm_sf) +
-  geom_sf(linewidth = 0.05) +
+  geom_sf(linewidth = 0.1) +
   theme_void()
 ```
 
@@ -61,17 +61,78 @@ Major streets and arterials layer from the DCM.
 nyc_dcm_arterial_sf
 ```
 
-```{r nyc-dcm-arterial-map, fig.width=12, fig.height=12}
+```{r nyc-dcm-arterial-map, fig.width = 10, fig.height = 8}
 ggplot(nyc_dcm_arterial_sf) +
-  geom_sf(linewidth = 0.5) +
+  geom_sf() +
   theme_void()
 ```
 
 ## Combined View
 
-```{r nyc-dcm-combined, fig.width=12, fig.height=12}
+```{r nyc-dcm-combined, fig.width = 10, fig.height = 8}
 ggplot() +
   geom_sf(data = nyc_dcm_sf, color = "gray80", linewidth = 0.1) +
-  geom_sf(data = nyc_dcm_arterial_sf, color = "red", linewidth = 0.25) +
+  geom_sf(data = nyc_dcm_arterial_sf, color = "red", linewidth = 0.5) +
   theme_void()
+```
+
+## NYC Digital City Map City Map Alterations
+
+City map alterations documenting changes approved by the City Planning Commission.
+
+```{r nyc-dcm-alteration}
+nyc_dcm_alteration_sf
+```
+
+```{r nyc-dcm-alteration-map, fig.width = 10, fig.height = 8}
+ggplot(nyc_dcm_alteration_sf) +
+  geom_sf(aes(fill = boro_code), alpha = 0.5) +
+  theme_void() +
+  labs(fill = "Borough")
+```
+
+## NYC Digital City Map Street Name Changes Areas
+
+Area-based street name changes including plaza names and public place names.
+
+```{r nyc-dcm-snc-area}
+nyc_dcm_snc_area_sf
+```
+
+```{r nyc-dcm-snc-area-map, fig.width = 10, fig.height = 8}
+ggplot(nyc_dcm_snc_area_sf) +
+  geom_sf(aes(fill = feat_type), alpha = 0.7) +
+  theme_void() +
+  labs(fill = "Feature Type")
+```
+
+## NYC Digital City Map Street Name Changes Lines
+
+Linear street name changes including street renamings and honorary street names.
+
+```{r nyc-dcm-snc-line}
+nyc_dcm_snc_line_sf
+```
+
+```{r nyc-dcm-snc-line-map, fig.width = 10, fig.height = 8}
+ggplot(nyc_dcm_snc_line_sf) +
+  geom_sf(aes(color = ll_type), linewidth = 0.5) +
+  theme_void() +
+  labs(color = "Local Law Type")
+```
+
+## NYC Digital City Map Street Name Changes Points
+
+Point-based street name changes including intersection names and corner names.
+
+```{r nyc-dcm-snc-point}
+nyc_dcm_snc_point_sf
+```
+
+```{r nyc-dcm-snc-point-map, fig.width = 10, fig.height = 8}
+ggplot() +
+  geom_sf(data = nyc_dcm_sf, color = "gray90", linewidth = 0.1) +
+  geom_sf(data = nyc_dcm_snc_point_sf, aes(color = feat_type), size = 0.25, alpha = 0.7) +
+  theme_void() +
+  labs(color = "Feature Type")
 ```

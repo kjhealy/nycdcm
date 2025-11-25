@@ -1,3 +1,36 @@
+#' NYC Digital City Map: City Map Alterations
+#'
+#' Spatial features representing city map alterations in New York City from the
+#' Digital City Map (DCM). These alterations document changes to the city map
+#' approved by the City Planning Commission.
+#'
+#' @format A simple feature collection with 5,105 features and 19 fields:
+#' \describe{
+#'   \item{boro_code}{Borough code (single letter: M, X, K, Q, R)}
+#'   \item{app_num}{Application number for the map alteration}
+#'   \item{project_nm}{Project name associated with the alteration}
+#'   \item{filed_stat}{Filed status code}
+#'   \item{status}{Current status code of the alteration}
+#'   \item{effect_dt}{Effective date of the alteration}
+#'   \item{bp_num}{Borough President number}
+#'   \item{cc_res_num}{City Council resolution number}
+#'   \item{zr_update}{Zoning resolution update indicator (0/1)}
+#'   \item{cert_date}{Certification date}
+#'   \item{chg_type}{Type of change}
+#'   \item{altmappdf}{Filename of the alteration map PDF}
+#'   \item{altmaplink}{URL link to the alteration map PDF}
+#'   \item{sec_sheet}{Section sheet number}
+#'   \item{app_rectyp}{Application record type}
+#'   \item{map_num}{Map number}
+#'   \item{boro_name}{Full borough name}
+#'   \item{hyperlnk}{Alternative hyperlink to documentation}
+#'   \item{cptype}{City Planning type code}
+#'   \item{geometry}{Multipolygon geometry (NAD83 / New York Long Island ftUS)}
+#' }
+#' @source NYC Department of City Planning Digital City Map, October 31, 2025
+#' @source \url{https://www.nyc.gov/site/planning/data-maps/open-data/dwn-digital-city-map.page}
+"nyc_dcm_alteration_sf"
+
 #' NYC Digital City Map Arterials and Major Streets
 #'
 #' A spatial dataset containing arterial and major street routes from the New York
@@ -83,4 +116,85 @@
 #'   theme_minimal()
 #' }
 "nyc_dcm_sf"
+
+#' NYC Digital City Map: Street Name Changes Areas
+#'
+#' Spatial features representing area-based street name changes in New York City
+#' from the Digital City Map (DCM). These include plaza names, public place names,
+#' and intersection names established through local laws.
+#'
+#' @format A simple feature collection with 49 features and 13 fields:
+#' \describe{
+#'   \item{borough}{Full borough name}
+#'   \item{feat_type}{Feature type (e.g., "Public place", "Plaza Name", "Intersection name")}
+#'   \item{ll_num}{Local law number}
+#'   \item{ll_sec}{Local law section number}
+#'   \item{ll_type}{Local law type (e.g., "Renaming", "Initial Naming")}
+#'   \item{lleffectdt}{Local law effective date}
+#'   \item{ll_limits}{Description of the geographic limits of the name change}
+#'   \item{limits_er}{Limits error or correction notes}
+#'   \item{repealed}{Whether the local law has been repealed (Yes/No)}
+#'   \item{repeal_dt}{Repeal date if applicable}
+#'   \item{amended}{Whether the local law has been amended (Yes/No)}
+#'   \item{amend_dt}{Amendment date if applicable}
+#'   \item{amendt_txt}{Amendment text describing the changes}
+#'   \item{geometry}{Polygon geometry (NAD83 / New York Long Island ftUS)}
+#' }
+#' @source NYC Department of City Planning Digital City Map, October 31, 2025
+#' @source \url{https://www.nyc.gov/site/planning/data-maps/open-data/dwn-digital-city-map.page}
+"nyc_dcm_snc_area_sf"
+
+#' NYC Digital City Map: Street Name Changes Lines
+#'
+#' Spatial features representing linear street name changes in New York City
+#' from the Digital City Map (DCM). These include street renamings and honorary
+#' street names established through local laws.
+#'
+#' @format A simple feature collection with 1,145 features and 13 fields:
+#' \describe{
+#'   \item{borough}{Full borough name}
+#'   \item{feat_type}{Feature type (typically "Street name")}
+#'   \item{ll_num}{Local law number}
+#'   \item{ll_sec}{Local law section number}
+#'   \item{ll_type}{Local law type (e.g., "Renaming", "Honorary Name")}
+#'   \item{lleffectdt}{Local law effective date}
+#'   \item{ll_limits}{Description of the geographic limits of the name change}
+#'   \item{limits_er}{Limits error or correction notes}
+#'   \item{repealed}{Whether the local law has been repealed (Yes/No)}
+#'   \item{repeal_dt}{Repeal date if applicable}
+#'   \item{amended}{Whether the local law has been amended (Yes/No)}
+#'   \item{amend_dt}{Amendment date if applicable}
+#'   \item{amendt_txt}{Amendment text describing the changes}
+#'   \item{geometry}{Multilinestring geometry (NAD83 / New York Long Island ftUS)}
+#' }
+#' @source NYC Department of City Planning Digital City Map, October 31, 2025
+#' @source \url{https://www.nyc.gov/site/planning/data-maps/open-data/dwn-digital-city-map.page}
+"nyc_dcm_snc_line_sf"
+
+#' NYC Digital City Map: Street Name Changes Points
+#'
+#' Spatial features representing point-based street name changes in New York City
+#' from the Digital City Map (DCM). These include intersection names and corner
+#' names established through local laws.
+#'
+#' @format A simple feature collection with 1,214 features and 13 fields:
+#' \describe{
+#'   \item{borough}{Full borough name}
+#'   \item{feat_type}{Feature type (e.g., "Intersection Name", "Corner Name")}
+#'   \item{ll_num}{Local law number}
+#'   \item{ll_sec}{Local law section number}
+#'   \item{ll_type}{Local law type (typically "Initial Naming")}
+#'   \item{lleffectdt}{Local law effective date}
+#'   \item{ll_limits}{Description of the location of the name change}
+#'   \item{limits_er}{Limits error or correction notes}
+#'   \item{repealed}{Whether the local law has been repealed (Yes/No)}
+#'   \item{repeal_dt}{Repeal date if applicable}
+#'   \item{amended}{Whether the local law has been amended (Yes/No)}
+#'   \item{amend_dt}{Amendment date if applicable}
+#'   \item{amendt_txt}{Amendment text describing the changes}
+#'   \item{geometry}{Point geometry (NAD83 / New York Long Island ftUS)}
+#' }
+#' @source NYC Department of City Planning Digital City Map, October 31, 2025
+#' @source \url{https://www.nyc.gov/site/planning/data-maps/open-data/dwn-digital-city-map.page}
+"nyc_dcm_snc_point_sf"
 

@@ -6,6 +6,10 @@ fs::dir_ls("data", glob = "*.rda") |> fs::file_delete()
 # Build data.R from documentation files
 source(here::here("data-raw", "nyc_dcm.R"))
 source(here::here("data-raw", "nyc_dcm_arterials.R"))
+source(here::here("data-raw", "nyc_dcm_alterations.R"))
+source(here::here("data-raw", "nyc_dcm_snc_areas.R"))
+source(here::here("data-raw", "nyc_dcm_snc_lines.R"))
+source(here::here("data-raw", "nyc_dcm_snc_points.R"))
 
 # Documentation in `data-raw/_documentation` isn't generated automatically. If the data
 # changes, errors are found, or check() detects inconsistencies the
