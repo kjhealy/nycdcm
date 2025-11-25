@@ -1,4 +1,4 @@
-## code to prepare `nycdcmarterial_sf` dataset goes here
+## code to prepare `nyc_dcm_arterial_sf` dataset goes here
 source(here::here("data-raw", "_shared.R"))
 
 nyc_dcm_rawpath <- here("data-raw", "dcm", "dcm_20251031shp")
