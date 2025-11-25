@@ -16,3 +16,5 @@ Suggests:
     tibble (>= 3.0.0)
 LazyData: true
 LazyDataCompression: xz
+URL: https://github.com/kjhealy/nycdcm
+BugReports: https://github.com/kjhealy/nycdcm/issues
