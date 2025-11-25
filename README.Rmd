@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%",
-  dpi = 400
+  dpi = 300
 )
 ```
 
@@ -48,23 +48,22 @@ nyc_dcm_sf
 ```
 
 ```{r nyc-dcm-map, fig.width=12, fig.height=12}
-nyc_dcm_sf |>
-    ggplot() +
-    geom_sf(linewidth = 0.1) +
-    theme_void()
+ggplot(nyc_dcm_sf) +
+  geom_sf(linewidth = 0.05) +
+  theme_void()
 ```
 
 ## NYC Digital City Map Arterials and Major Streets
 
 Major streets and arterials layer from the DCM.
 
-```{r nyc-dcmarterial}
+```{r nyc-dcm-arterial}
 nyc_dcm_arterial_sf
 ```
 
-```{r nyc-dcmarterial-map, fig.width=12, fig.height=12}
+```{r nyc-dcm-arterial-map, fig.width=12, fig.height=12}
 ggplot(nyc_dcm_arterial_sf) +
-  geom_sf(linewidth = 0.2) +
+  geom_sf(linewidth = 0.5) +
   theme_void()
 ```
 
@@ -73,6 +72,6 @@ ggplot(nyc_dcm_arterial_sf) +
 ```{r nyc-dcm-combined, fig.width=12, fig.height=12}
 ggplot() +
   geom_sf(data = nyc_dcm_sf, color = "gray80", linewidth = 0.1) +
-  geom_sf(data = nyc_dcm_arterial_sf, color = "red", linewidth = 0.5) +
+  geom_sf(data = nyc_dcm_arterial_sf, color = "red", linewidth = 0.25) +
   theme_void()
 ```
