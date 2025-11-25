@@ -1,0 +1,18 @@
+authors:
+  Kieran Healy:
+    href: http://kieranhealy.org
+
+url: https://kjhealy.github.io/nycmaps/
+template:
+  bootstrap: 5
+  bslib:
+    base_font: {google: "IBM Plex Sans"}
+    heading_font: {google: "IBM Plex Sans"}
+    code_font: {google: "IBM Plex Mono"}
+
+
+reference:
+  - title: "New York Digital City Map Layers"
+    contents:
+      - nyc_dcm_sf
+      - nyc_dcmarterial_sf

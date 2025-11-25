@@ -1,0 +1,78 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  dpi = 600
+)
+```
+
+# nycdcm
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Provides sf objects from the New York City Digital City Map (DCM) for drawing street maps and working with NYC street data.
+
+## Installation
+
+You can install the development version of nycdcm like so:
+
+``` r
+remotes::install_github("kjhealy/nycdcm")
+```
+
+## Load
+
+```{r load}
+library(tidyverse)
+library(sf)
+library(nycdcm)
+```
+
+# What's included
+
+## NYC Digital City Map Main Layer
+
+The main DCM layer containing street data for all of New York City.
+
+```{r nyc-dcm}
+nyc_dcm_sf
+```
+
+```{r nyc-dcm-map, fig.width=12, fig.height=12}
+nyc_dcm_sf |>
+    ggplot() +
+    geom_sf(linewidth = 0.1) +
+    theme_void()
+```
+
+## NYC Digital City Map Arterials and Major Streets
+
+Major streets and arterials layer from the DCM.
+
+```{r nyc-dcmarterial}
+nyc_dcmarterial_sf
+```
+
+```{r nyc-dcmarterial-map, fig.width=12, fig.height=12}
+ggplot(nyc_dcmarterial_sf) +
+  geom_sf(linewidth = 0.2) +
+  theme_void()
+```
+
+## Combined View
+
+```{r nyc-dcm-combined, fig.width=12, fig.height=12}
+ggplot() +
+  geom_sf(data = nyc_dcm_sf, color = "gray80", linewidth = 0.1) +
+  geom_sf(data = nyc_dcmarterial_sf, color = "red", linewidth = 0.5) +
+  theme_void()
+```
