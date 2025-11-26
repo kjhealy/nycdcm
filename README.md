@@ -193,7 +193,7 @@ ggplot(nyc_dcm_alteration_sf) +
 
 <img src="man/figures/README-nyc-dcm-alteration-map-1.png" width="100%" />
 
-\##g NYC Digital City Map Street Name Changes: Areas
+## NYC Digital City Map Street Name Changes: Areas
 
 Area-based street name changes including plaza names and public place
 names.

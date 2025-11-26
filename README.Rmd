@@ -91,7 +91,7 @@ ggplot(nyc_dcm_alteration_sf) +
   labs(fill = "Borough")
 ```
 
-##g NYC Digital City Map Street Name Changes: Areas
+## NYC Digital City Map Street Name Changes: Areas
 
 Area-based street name changes including plaza names and public place names.
 
