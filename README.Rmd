@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 # nycdcm <img src="man/figures/nyc-dcm.png" align="right" width="360">
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/kjhealy/nycdcm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kjhealy/nycdcm/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Provides sf objects from the New York City Digital City Map (DCM) for drawing street maps and working with NYC street data.
