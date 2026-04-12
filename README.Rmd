@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/kjhealy/nycdcm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kjhealy/nycdcm/actions/workflows/R-CMD-check.yaml)
+[![R-universe version](https://kjhealy.r-universe.dev/nycdcm/badges/version)](https://kjhealy.r-universe.dev/nycdcm)
 <!-- badges: end -->
 
 Provides sf objects from the New York City Digital City Map (DCM) for drawing street maps and working with NYC street data.
@@ -29,6 +30,17 @@ You can install the development version of nycdcm like so:
 ``` r
 remotes::install_github("kjhealy/nycdcm")
 ```
+
+Alternatively, install this package from my [r-universe](https://kjhealy.r-universe.dev):
+
+```r
+install.packages(
+  "nycdcm",
+  repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+
+Including `https://cloud.r-project.org` ensures dependencies on CRAN are resolved automatically.
 
 ## Load
 
