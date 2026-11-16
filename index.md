@@ -8,6 +8,7 @@ drawing street maps and working with NYC street data.
 You can install the development version of nycdcm like so:
 
 ``` r
+
 remotes::install_github("kjhealy/nycdcm")
 ```
 
@@ -15,6 +16,7 @@ Alternatively, install this package from my
 [r-universe](https://kjhealy.r-universe.dev):
 
 ``` r
+
 install.packages(
   "nycdcm",
   repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
@@ -27,6 +29,7 @@ resolved automatically.
 ## Load
 
 ``` r
+
 library(tidyverse)
 #> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 #> ✔ dplyr     1.2.1     ✔ readr     2.2.0
@@ -50,6 +53,7 @@ library(nycdcm)
 The main DCM layer containing street data for all of New York City.
 
 ``` r
+
 nyc_dcm_sf
 #> Simple feature collection with 67979 features and 5 fields
 #> Geometry type: MULTILINESTRING
@@ -82,6 +86,7 @@ nyc_dcm_sf
 ```
 
 ``` r
+
 ggplot(nyc_dcm_sf) +
   geom_sf(linewidth = 0.1) +
   theme_void()
@@ -94,6 +99,7 @@ ggplot(nyc_dcm_sf) +
 Major streets and arterials layer from the DCM.
 
 ``` r
+
 nyc_dcm_arterial_sf
 #> Simple feature collection with 740 features and 6 fields
 #> Geometry type: MULTILINESTRING
@@ -126,6 +132,7 @@ nyc_dcm_arterial_sf
 ```
 
 ``` r
+
 ggplot(nyc_dcm_arterial_sf) +
   geom_sf() +
   theme_void()
@@ -136,6 +143,7 @@ ggplot(nyc_dcm_arterial_sf) +
 ## Combined View
 
 ``` r
+
 ggplot() +
   geom_sf(data = nyc_dcm_sf, color = "gray80", linewidth = 0.1) +
   geom_sf(data = nyc_dcm_arterial_sf, color = "red", linewidth = 0.5) +
@@ -150,6 +158,7 @@ City map alterations documenting changes approved by the City Planning
 Commission.
 
 ``` r
+
 nyc_dcm_alteration_sf
 #> Simple feature collection with 5105 features and 19 fields
 #> Geometry type: MULTIPOLYGON
@@ -215,6 +224,7 @@ nyc_dcm_alteration_sf
 ```
 
 ``` r
+
 ggplot(nyc_dcm_alteration_sf) +
   geom_sf(aes(fill = boro_code), alpha = 0.5) +
   theme_void() +
@@ -229,6 +239,7 @@ Area-based street name changes including plaza names and public place
 names.
 
 ``` r
+
 nyc_dcm_snc_area_sf
 #> Simple feature collection with 49 features and 13 fields
 #> Geometry type: POLYGON
@@ -283,6 +294,7 @@ nyc_dcm_snc_area_sf
 ```
 
 ``` r
+
 ggplot(nyc_dcm_snc_area_sf) +
   geom_sf(aes(fill = feat_type), alpha = 0.7) +
   theme_void() +
@@ -297,6 +309,7 @@ Linear street name changes including street renamings and honorary
 street names.
 
 ``` r
+
 nyc_dcm_snc_line_sf
 #> Simple feature collection with 1145 features and 13 fields
 #> Geometry type: MULTILINESTRING
@@ -362,6 +375,7 @@ nyc_dcm_snc_line_sf
 ```
 
 ``` r
+
 ggplot(nyc_dcm_snc_line_sf) +
   geom_sf(aes(color = ll_type), linewidth = 0.5) +
   theme_void() +
@@ -376,6 +390,7 @@ Point-based street name changes including intersection names and corner
 names.
 
 ``` r
+
 nyc_dcm_snc_point_sf
 #> Simple feature collection with 1214 features and 13 fields
 #> Geometry type: POINT
@@ -430,6 +445,7 @@ nyc_dcm_snc_point_sf
 ```
 
 ``` r
+
 ggplot() +
   geom_sf(data = nyc_dcm_sf, color = "gray90", linewidth = 0.1) +
   geom_sf(data = nyc_dcm_snc_point_sf, aes(color = feat_type), size = 0.25, alpha = 0.7) +
